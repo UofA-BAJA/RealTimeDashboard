@@ -8,3 +8,5 @@ class RealTimeDashboard(QtWidgets.QWidget, MetaApplication):
         super(RealTimeDashboard, self).__init__()
 
         
+
+        
