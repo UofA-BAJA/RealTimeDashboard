@@ -9,10 +9,7 @@ class MetaApplication:
 
         self.src_directory = os.path.join(self.repo_dir, "src")
 
-        self.sensors_configuration_json = self.__create_json_obj("sensors")
-
-        self.simulator_configuration_json = self.__create_json_obj("simulator")
-
+        self.app_configuration_json = self.__create_json_obj("app")
 
     
     def __get_repo_directory(self):
@@ -33,9 +30,3 @@ class MetaApplication:
             data = json.load(read_file)
 
         return data
-    
-
-
-        
-m = MetaApplication()
-

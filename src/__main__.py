@@ -1,26 +1,22 @@
 
-from data.database_wrapper_class import Database_Wrapper
-from serial.port import Port
-from widgets.mainwidgets import setupApp, showapp
-#beep boop bop
-SCREEN_SCALAR = 2
-'''
-SCREEN SCALAR LETS YOU CHOOSE HOW BIG THE WINDOW IS WHILE DEVELOPING
-    width, height
-0 = 800, 480
-1 = 1600, 960
-2 = 2400, 1440
-'''
+import sys
+
+from PyQt5 import QtWidgets
+
+from application import RealTimeDashboard
 
 def main():
+    # Create an instance of the QApplication class
+    system = QtWidgets.QApplication(sys.argv)
 
-    d = Database_Wrapper()
+    # Create your main window here
+    app = RealTimeDashboard()
 
-    d.create_table_if_not_exists()
+    # Show the main window
+    app.show()
 
-    ex, app = setupApp(SCREEN_SCALAR)
-
-    showapp(ex, app)
+    # Start the event loop
+    system.exec()
 
 
 if __name__ == '__main__':
