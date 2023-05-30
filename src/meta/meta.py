@@ -9,7 +9,10 @@ class MetaApplication:
 
         self.src_directory = os.path.join(self.repo_dir, "src")
 
-        self.__create_json_obj()
+        self.sensors_configuration_json = self.__create_json_obj("sensors")
+
+        self.simulator_configuration_json = self.__create_json_obj("simulator")
+
 
     
     def __get_repo_directory(self):
@@ -19,20 +22,20 @@ class MetaApplication:
 
         return curdir[:index + len(curdir)]
     
-    def __create_json_obj(self):
+    def __create_json_obj(self, json_filename):
 
-        json_path = os.path.join(self.repo_dir, ".config", "sensors.json")
-        #print(json_path)
+        data = None
+       
+        json_file = json_filename + ".json"
+        json_path = os.path.join(self.repo_dir, ".config", json_file)
 
         with open(json_path, "r") as read_file:
-            self.sensor_configuration_json = json.load(read_file)
+            data = json.load(read_file)
 
-
+        return data
     
 
 
         
 m = MetaApplication()
-
-print(m.src_directory)
 
