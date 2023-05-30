@@ -1,10 +1,13 @@
 {
     "data_playback_settings" : {
         "on_off_toggle" : "OFF",
-        "target_readings_per_second" : 10,
-        "name_of_data_csv_to_be_used" : "alldata_sinusoidal"
+        "readings_per_second_target" : 10,
+        "name_of_data_csv_to_be_used" : "alldata_sinusoidal",
+        "loop_data_toggle" : "ON"
     },
-
+    "database_settings" : {
+        "start_record_into_database_on_startup": "ON"
+    },
     "datatypes" : [
         {
             "sensor_name" : "front_right_suspension",
